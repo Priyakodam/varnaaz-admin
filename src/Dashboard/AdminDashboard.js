@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
   FaUsers,
-  FaSignOutAlt
+  FaSignOutAlt,
+  FaUserPlus
 } from "react-icons/fa"; 
 import { IoHomeOutline } from "react-icons/io5";
 import "./AdminDashboard.css";
@@ -54,6 +55,12 @@ const AdminDashboard = ({ onToggleSidebar }) => {
               <Link className="nav-link" to="/users" onClick={handleNavItemClick}>
                 <FaUsers className="nav-icon" />
                 {!collapsed && <span className="link_text">Users</span>}
+              </Link>
+            </li>
+            <li className={`nav-item ${location.pathname === '/add-role' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/add-role" onClick={handleNavItemClick}>
+                <FaUserPlus className="nav-icon" />
+                {!collapsed && <span className="link_text">Add Role</span>}
               </Link>
             </li>
 

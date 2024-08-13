@@ -85,7 +85,7 @@
     width: 100%;
   }
 
-  .-content.collapsed {
+  .users-content.collapsed {
     margin-left: 0;
     width: 100%;
   }
