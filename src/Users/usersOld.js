@@ -1,13 +1,12 @@
 // src/UserTable.js
 import React, { useEffect, useState } from 'react';
 import { db } from '../Firebase/FirebaseConfig';
-import { collection, getDocs, updateDoc, doc, getDoc, setDoc, deleteDoc } from 'firebase/firestore';
+import { collection, getDocs, updateDoc, doc, getDoc, setDoc, deleteDoc} from 'firebase/firestore';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import AssignLocationModal from './AssignLocationModal';
 import "./users.css";
 import AdminDashboard from '../Dashboard/AdminDashboard';
-import { Button, Form, Col, Row, Pagination } from "react-bootstrap";
-import ModalForm from './AddRoleForm';
+import { Form, Col, Row, Pagination } from "react-bootstrap";
 
 const UserTable = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -16,7 +15,6 @@ const UserTable = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [pageSize, setPageSize] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-  const [showModal, setShowModal] = useState(false); // State to control modal visibility
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -96,13 +94,18 @@ const UserTable = () => {
       console.error('Error updating status:', error);
     }
   };
+  
+  
+  
+  
+  
 
-  const handleShowModal = () => {
-    setShowModal(true);
+  const handleAssignClick = (user) => {
+    setSelectedUser(user);
   };
 
   const handleCloseModal = () => {
-    setShowModal(false); // Set showModal to false to close the modal
+    setSelectedUser(null);
   };
 
   const handleSearch = (event) => {
@@ -193,11 +196,6 @@ const UserTable = () => {
                 </span>
               )}
             </Col>
-            <Col xs="auto" className="my-1">
-              <Button className='add-role-button' variant="primary" onClick={handleShowModal}>
-                Add Role
-              </Button>
-            </Col>
           </Row>
         </Form>
         <div className='table-container'>
@@ -246,7 +244,9 @@ const UserTable = () => {
           {renderPagination()}
         </div>
       </div>
-      <ModalForm show={showModal} handleClose={handleCloseModal} />
+      {selectedUser && (
+        <AssignLocationModal user={selectedUser} onClose={handleCloseModal} />
+      )}
     </div>
   );
 };

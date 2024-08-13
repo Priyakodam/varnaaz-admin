@@ -16,7 +16,7 @@ code {
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .styled-table th, .styled-table td {

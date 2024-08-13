@@ -7,7 +7,7 @@
   
 .modal {
   position: fixed;
-  z-index: 1;
+  /* z-index: 1; */
   left: 0;
   top: 0;
   width: 100%;
@@ -24,7 +24,7 @@
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  width: 300px;
+  width: 400px;
   text-align: center;
 }
 
@@ -38,7 +38,8 @@
 
 .modal-content label {
   display: block;
-  margin: 10px 0;
+  /* margin: 10px 0; */
+  text-align: left;
 }
 
 .modal-content input {
@@ -54,7 +55,16 @@
 
 
 
+.add-role-button{
+  text-align: right;
+  margin-left: 985%;
+  margin-top: -4px;
+  width: 100px;
+}
 
+.users-pagination{
+  margin-top: 30px;
+}
 
 .users-container {
   display: flex;
