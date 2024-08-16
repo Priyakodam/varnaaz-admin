@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import {
   FaUsers,
   FaSignOutAlt,
-  FaUserPlus
+  FaUserPlus,
+  FaCar 
 } from "react-icons/fa"; 
 import { IoHomeOutline } from "react-icons/io5";
 import "./AdminDashboard.css";
@@ -57,10 +58,10 @@ const AdminDashboard = ({ onToggleSidebar }) => {
                 {!collapsed && <span className="link_text">Users</span>}
               </Link>
             </li>
-            <li className={`nav-item ${location.pathname === '/add-role' ? 'active' : ''}`}>
-              <Link className="nav-link" to="/add-role" onClick={handleNavItemClick}>
+            <li className={`nav-item ${location.pathname === '/attendance' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/attendance" onClick={handleNavItemClick}>
                 <FaUserPlus className="nav-icon" />
-                {!collapsed && <span className="link_text">Add Role</span>}
+                {!collapsed && <span className="link_text">Attendance</span>}
               </Link>
             </li>
             <li className={`nav-item ${location.pathname === '/leavetype' ? 'active' : ''}`}>
@@ -74,6 +75,12 @@ const AdminDashboard = ({ onToggleSidebar }) => {
               <Link className="nav-link" to="/employeeleaves" onClick={handleNavItemClick}>
                 <FaUserPlus className="nav-icon" />
                 {!collapsed && <span className="link_text">Leaves</span>}
+              </Link>
+            </li>
+            <li className={`nav-item ${location.pathname === '/vehiclereport' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/vehiclereport" onClick={handleNavItemClick}>
+                <FaCar className="nav-icon" />
+                {!collapsed && <span className="link_text">Vehicle Report</span>}
               </Link>
             </li>
 
