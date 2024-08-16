@@ -31,7 +31,7 @@ const AddRoleModal = ({ show, handleClose }) => {
   };
 
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleClose} >
       <Modal.Header closeButton>
         <Modal.Title>Add Role</Modal.Title>
       </Modal.Header>

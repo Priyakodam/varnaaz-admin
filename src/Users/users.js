@@ -194,12 +194,15 @@ const UserTable = () => {
               )}
             </Col>
             <Col xs="auto" className="my-1">
-              <Button className='add-role-button' variant="primary" onClick={handleShowModal}>
-                Add Role
-              </Button>
+             
             </Col>
           </Row>
         </Form>
+        <div>
+        <Button className='add-role-button' style={{marginLeft:"1150px"}}variant="primary" onClick={handleShowModal}>
+                Add Role
+              </Button>
+        </div>
         <div className='table-container'>
           <table className="styled-table">
             <thead>

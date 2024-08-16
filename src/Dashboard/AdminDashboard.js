@@ -63,6 +63,19 @@ const AdminDashboard = ({ onToggleSidebar }) => {
                 {!collapsed && <span className="link_text">Add Role</span>}
               </Link>
             </li>
+            <li className={`nav-item ${location.pathname === '/leavetype' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/leavetype" onClick={handleNavItemClick}>
+                <FaUserPlus className="nav-icon" />
+                {!collapsed && <span className="link_text">Leave Type</span>}
+              </Link>
+            </li>
+
+            <li className={`nav-item ${location.pathname === '/employeeleaves' ? 'active' : ''}`}>
+              <Link className="nav-link" to="/employeeleaves" onClick={handleNavItemClick}>
+                <FaUserPlus className="nav-icon" />
+                {!collapsed && <span className="link_text">Leaves</span>}
+              </Link>
+            </li>
 
             <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
               <Link className="nav-link" to="/" onClick={handleNavItemClick}>

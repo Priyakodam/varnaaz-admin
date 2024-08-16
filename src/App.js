@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UserTable from './Users/users';
 import Login from "./Login/Login";
 import AdminDashboard from './Dashboard/AdminDashboard';
+import LeaveType from './Leave/LeaveType';
+import EmployeeLeaves from './Leave/EmployeeLeaves';
 
 
 const App = () => {
@@ -15,6 +17,9 @@ const App = () => {
         <Route path="/" element={<Login />} />
        
         <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route path="/leavetype" element={<LeaveType />} />
+
+<Route path="/employeeleaves" element={<EmployeeLeaves />} />
       </Routes>
     </Router>
   );

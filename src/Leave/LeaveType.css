@@ -1,0 +1,33 @@
+.leavetype-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.leavetype-content {
+    flex: 1;
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 300px;
+    transition: margin-left 0.3s;
+}
+
+.leavetype-content.collapsed {
+    margin-left: 200px;
+}
+
+  @media (max-width: 768px) {
+    .leavetype-content {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+ 
+  
+ 
+  
