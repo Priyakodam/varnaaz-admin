@@ -1,340 +1,173 @@
 /* Main Container */
 .leave-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  /* Content Area */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Content Area */
+.leave-content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+
+.leave-content.collapsed {
+  margin-left: 60px; /* Adjust based on sidebar width */
+}
+
+/* Header Section */
+.leave-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Add Leave Button */
+.add-leave-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-leave-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto; /* Scrollable table */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f8f9fa;
+}
+
+thead th {
+  border-bottom: 2px solid lightgrey;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination a:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* For large tablets and small desktops */
+@media (max-width: 1024px) {
   .leave-content {
-    flex: 1;
-    padding: 20px;
-    margin-top: 40px;
-    margin-left: 220px;
-    transition: margin-left 0.3s ease;
-  }/* Main Container */
-.leave-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
+    margin-left: 150px;
   }
-  
-  /* Content Area */
+
+  .add-leave-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* For tablets */
+@media (max-width: 768px) {
   .leave-content {
-    flex: 1;
-    padding: 20px;
-    margin-top: 40px;
-    margin-left: 220px;
-    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    padding: 15px;
   }
-  
-  .leave-content.collapsed {
-    margin-left: 60px; /* Adjust based on sidebar width */
-  }
-  
-  /* Header Section */
+
   .leave-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
   }
-  
-  /* Add Leave Button */
+
   .add-leave-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-top: 10px;
   }
-  
-  .add-leave-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Table Styling */
+
   table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 13px;
   }
-  
+
   th, td {
-    border: 1px solid #dee2e6;
-    padding: 12px;
-    text-align: left;
+    padding: 8px;
   }
-  
-  thead {
-    background-color: #f8f9fa;
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .leave-container {
+    padding: 10px;
   }
-  
-  thead th {
-    border-bottom: 2px solid lightgrey;
+
+  .leave-content {
+    padding: 10px;
+    margin-top: 20px;
   }
-  
-  /* Pagination */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-  }
-  
-  .pagination a {
-    margin: 0 5px;
-    padding: 8px 16px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .pagination a.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .pagination a:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-  
-  /* Responsive Styles */
-  
-  /* For large tablets and small desktops */
-  @media (max-width: 1024px) {
-    .leave-content {
-      margin-left: 150px;
-    }
-  
-    .add-leave-btn {
-      font-size: 13px;
-      padding: 6px 12px;
-    }
-  
-    table {
-      font-size: 14px;
-    }
-  
-    th, td {
-      padding: 10px;
-    }
-  }
-  
-  /* For tablets */
-  @media (max-width: 768px) {
-    .leave-content {
-      margin-left: 0;
-      padding: 15px;
-    }
-  
-    .leave-header {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 30px;
-    }
-  
-    .add-leave-btn {
-      font-size: 12px;
-      padding: 6px 10px;
-      margin-top: 10px;
-    }
-  
-    table {
-      font-size: 13px;
-    }
-  
-    th, td {
-      padding: 8px;
-    }
-  }
-  
-  /* For mobile devices */
-  @media (max-width: 480px) {
-    .leave-container {
-      padding: 10px;
-    }
-  
-    .leave-content {
-      padding: 10px;
-      margin-top: 20px;
-    }
-  
-    .add-leave-btn {
-      font-size: 12px;
-      padding: 5px 8px;
-      margin-top: 10px;
-    }
-  
-    table {
-      font-size: 12px;
-    }
-  
-    th, td {
-      padding: 6px;
-    }
-  }
-  
-  
-  .leave-content.collapsed {
-    margin-left: 60px; /* Adjust based on sidebar width */
-  }
-  
-  /* Header Section */
-  .leave-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Add Leave Button */
+
   .add-leave-btn {
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 12px;
+    padding: 5px 8px;
+    margin-top: 10px;
   }
-  
-  .add-leave-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Table Styling */
+
   table {
-    width: 100%;
-    border-collapse: collapse;
+    font-size: 12px;
   }
-  
+
   th, td {
-    border: 1px solid #dee2e6;
-    padding: 12px;
-    text-align: left;
+    padding: 6px;
   }
-  
-  thead {
-    background-color: #f8f9fa;
+
+  /* Ensure table is scrollable on small screens */
+  .table-container {
+    overflow-x: scroll;
   }
-  
-  thead th {
-    border-bottom: 2px solid lightgrey;
-  }
-  
-  /* Pagination */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-  }
-  
-  .pagination a {
-    margin: 0 5px;
-    padding: 8px 16px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #007bff;
-  }
-  
-  .pagination a.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .pagination a:hover {
-    background-color: #0056b3;
-    color: white;
-  }
-  
-  .table .btn-icon {
-    margin-right: 5px;
-  }
-  
-  .table .btn-icon:last-child {
-    margin-right: 0;
-  }
-  
-  
-  /* For large tablets and small desktops */
-  @media (max-width: 1024px) {
-    .leave-content {
-      margin-left: 150px;
-    }
-  
-    .add-leave-btn {
-      font-size: 13px;
-      padding: 6px 12px;
-    }
-  
-    table {
-      font-size: 14px;
-    }
-  
-    th, td {
-      padding: 10px;
-    }
-  }
-  
-  /* For tablets */
-  @media (max-width: 768px) {
-    .leave-content {
-      margin-left: 0;
-      padding: 15px;
-    }
-  
-    .leave-header {
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 30px;
-    }
-  
-    .add-leave-btn {
-      font-size: 12px;
-      padding: 6px 10px;
-      margin-top: 10px;
-    }
-  
-    table {
-      font-size: 13px;
-    }
-  
-    th, td {
-      padding: 8px;
-    }
-  }
-  
-  /* For mobile devices */
-  @media (max-width: 480px) {
-    .leave-container {
-      padding: 10px;
-    }
-  
-    .leave-content {
-      padding: 10px;
-      margin-top: 20px;
-    }
-  
-    .add-leave-btn {
-      font-size: 12px;
-      padding: 5px 8px;
-      margin-top: 10px;
-    }
-  
-    table {
-      font-size: 12px;
-    }
-  
-    th, td {
-      padding: 6px;
-    }
-  }
-  
+}

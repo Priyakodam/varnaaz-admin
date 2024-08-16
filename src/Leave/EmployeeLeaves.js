@@ -91,58 +91,60 @@ function EmployeeLeaves() {
       <AdminDashboard onToggleSidebar={setCollapsed} />
       <div className={`leave-content ${collapsed ? 'collapsed' : ''}`}>
         <div className="leave-header">
-          <h5 className="mb-3">All Employee Leave Requests</h5>
+          <h5 className="mb-3">Leave Requests</h5>
         </div>
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">S No</th>
-              <th scope="col">Username</th>
-              <th scope="col">Leave Type</th>
-              <th scope="col">From Date</th>
-              <th scope="col">To Date</th>
-              <th scope="col">Description</th>
-              <th scope="col">Status</th>
-              <th scope="col">Applied On</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentLeaves.length === 0 ? (
-              <tr>
-                <td colSpan="9" className="text-center">
-                  No leave requests found.
-                </td>
-              </tr>
-            ) : (
-              currentLeaves.map((leave, index) => (
-                <tr key={index}>
-                  <td>{index + 1 + indexOfFirstLeave}</td>
-                  <td>{getUserName(leave.userId)}</td>
-                  <td>{leave.leaveType}</td>
-                  <td>{formatDate(leave.fromDate)}</td>
-                  <td>{formatDate(leave.toDate)}</td>
-                  <td>{leave.description}</td>
-                  {/* Conditional styling based on status */}
-                  <td style={{ color: leave.status === 'Approved' ? 'green' : leave.status === 'Rejected' ? 'red' : 'black' }}>
-                    {leave.status}
-                  </td>
-                  <td>{formatDate(new Date(leave.appliedOn.seconds * 1000))}</td>
-                  <td>
-                    <select
-                      value={leave.status}
-                      onChange={(e) => handleStatusChange(leave, e.target.value)}
-                    >
-                      <option value="Pending">Pending</option>
-                      <option value="Approved">Approved</option>
-                      <option value="Rejected">Rejected</option>
-                    </select>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
+        <div className="table-responsive">
+  <table className="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S No</th>
+        <th scope="col">Username</th>
+        <th scope="col">Leave Type</th>
+        <th scope="col">From Date</th>
+        <th scope="col">To Date</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope="col">Applied On</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {currentLeaves.length === 0 ? (
+        <tr>
+          <td colSpan="9" className="text-center">
+            No leave requests found.
+          </td>
+        </tr>
+      ) : (
+        currentLeaves.map((leave, index) => (
+          <tr key={index}>
+            <td>{index + 1 + indexOfFirstLeave}</td>
+            <td>{getUserName(leave.userId)}</td>
+            <td>{leave.leaveType}</td>
+            <td>{formatDate(leave.fromDate)}</td>
+            <td>{formatDate(leave.toDate)}</td>
+            <td>{leave.description}</td>
+            <td style={{ color: leave.status === 'Approved' ? 'green' : leave.status === 'Rejected' ? 'red' : 'black' }}>
+              {leave.status}
+            </td>
+            <td>{formatDate(new Date(leave.appliedOn.seconds * 1000))}</td>
+            <td>
+              <select
+                value={leave.status}
+                onChange={(e) => handleStatusChange(leave, e.target.value)}
+              >
+                <option value="Pending">Pending</option>
+                <option value="Approved">Approved</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </td>
+          </tr>
+        ))
+      )}
+    </tbody>
+  </table>
+</div>
+
 
         <ReactPaginate
           previousLabel={"Previous"}
